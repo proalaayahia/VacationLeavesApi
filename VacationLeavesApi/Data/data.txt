@@ -1,0 +1,9 @@
+
+server: fz-dv-db01
+database: DNACloudDB202001Benefit
+tablename: Vacation
+user: hitsapp
+pass:123
+process is to scaffold that specified table to our data folder.
+=> scaffold-dbcontext "server=fz-dv-db01;database=DNACloudDB202001Benefit;user=hitsapp;password=123;trustservercertificate=true" Microsoft.EntityFrameworkCore.SqlServer -tables Vacation -OutputDir Data
+

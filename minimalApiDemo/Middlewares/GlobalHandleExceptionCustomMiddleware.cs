@@ -4,9 +4,9 @@ namespace minimalApiDemo.Middlewares;
 
 public class GlobalHandleExceptionCustomMiddleware : IMiddleware
 {
-    private readonly ILogger _logger;
+    private readonly ILogger<GlobalHandleExceptionCustomMiddleware> _logger;
 
-    public GlobalHandleExceptionCustomMiddleware(ILogger logger)
+    public GlobalHandleExceptionCustomMiddleware(ILogger<GlobalHandleExceptionCustomMiddleware> logger)
     {
         _logger = logger;
     }

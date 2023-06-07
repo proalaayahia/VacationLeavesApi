@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  minimalapidemo:
+    image: ${DOCKER_REGISTRY-}minimalapidemo
+    container_name: "minimal-api"
+    build:
+      context: .
+      dockerfile: minimalApiDemo/Dockerfile
+    depends_on:
+      - "db"
+  db:
+    image: postgres
+    container_name: postgree
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=P@ssw0rd
+      - POSTGRES_DB=TodoDB
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
